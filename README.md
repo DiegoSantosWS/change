@@ -1,7 +1,9 @@
 # SUBISTITUINDO PALAVRAS
 
 ```bash
-cp testar.py /project
+change $: cd change
+
+change $: cp testar.py /project
 ```
 
 abre o aquivo testar.py e altera o path para caminho real /home ...
