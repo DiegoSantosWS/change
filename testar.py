@@ -1,17 +1,16 @@
 import os, re
 
 pathFile = '<PATH>/<NAME_PROJECT>'
-pastas = os.listdir()
+directorys = os.listdir()
 total = 0
-def listarArquivos(pasta):
+def listDirectorys(directory):
     tot = 0
-    if os.path.isdir(pasta):
-        items = os.listdir(pasta)
-        if pasta == ".git":
+    if os.path.isdir(directory):
+        items = os.listdir(directory)
+        if directory == ".git":
             return 0
         for file in items:
-            strs = pathFile+pasta+'/'+file
-            print("item ", file)
+            strs = pathFile+directory+'/'+file
             open_file = open(strs,'r')
             read_file = open_file.read()
             regex = re.compile('<name_old>')
@@ -22,6 +21,6 @@ def listarArquivos(pasta):
     return tot
 
 if __name__ == '__main__':
-    for pasta in pastas:
-        total += listarArquivos(pasta)
+    for directory in directorys:
+        total += listDirectorys(directory)
     print("Total de arquivos: " + str(total))
